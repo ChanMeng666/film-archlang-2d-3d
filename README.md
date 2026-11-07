@@ -9,6 +9,11 @@ agent session whose every command and output is a real run of the pinned CLI.
 
 <!-- FILM: archlang-plan-to-3d -->
 
+
+https://github.com/user-attachments/assets/879a4b71-415e-4848-a4af-db9c879d6a71
+
+
+
 ![Poster: a floor plan rising into a 3D preview, beside "Designs that compile."](docs/poster.jpg)
 
 **Watch on YouTube:** [youtu.be/oCg3tBTlVvI](https://youtu.be/oCg3tBTlVvI) · **30 s Short:** [youtu.be/fBV-tr0gLuU](https://youtube.com/shorts/fBV-tr0gLuU) · **More films:** [chanmeng.org/films](https://chanmeng.org/films)
