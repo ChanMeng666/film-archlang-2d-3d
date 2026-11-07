@@ -7,7 +7,11 @@ with every drawing compiled by the real `@chanmeng666/archlang` and every 3D fra
 English subtitles; the film is for English-speaking viewers only. S9 is a labelled reenactment of an
 agent session whose every command and output is a real run of the pinned CLI.
 
+<!-- FILM: archlang-plan-to-3d -->
+
 ![Poster: a floor plan rising into a 3D preview, beside "Designs that compile."](docs/poster.jpg)
+
+**Watch on YouTube:** [youtu.be/oCg3tBTlVvI](https://youtu.be/oCg3tBTlVvI) · **30 s Short:** [youtu.be/fBV-tr0gLuU](https://youtube.com/shorts/fBV-tr0gLuU) · **More films:** [chanmeng.org/films](https://chanmeng.org/films)
 
 **Watch:** the [v1.0.0 release](https://github.com/ChanMeng666/film-archlang-2d-3d/releases/tag/v1.0.0)
 holds the 196 s film (1080p, English subtitles), the 30 s cuts in 16:9 and 9:16, and the poster.
