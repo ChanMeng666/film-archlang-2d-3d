@@ -284,3 +284,14 @@ card's line; every word is existing gated copy (s0_1, s0_3, s11_tag, s11_cta1, c
 The owner approved both 30 s cuts as they are. The cuts were not lined up with music beats (no beat
 map), and that is accepted. Every deliverable in the brief is now made and approved. What's left is
 publishing, which waits for the owner's word.
+
+### Published (2026-11-07, owner's request)
+
+Public repo `ChanMeng666/film-archlang-2d-3d` with release v1.0.0: the film, both 30 s cuts, SRTs,
+poster, thumbnail, SHA256SUMS. Before going public: `.env` and `audio/vo/` are gitignored and were
+never committed. Gitleaks found no secrets in any commit (two false positives were SHA-256 hashes
+in `data/bake-manifest.json`, now allowlisted in `.gitleaks.toml`). The key and voice ID values
+appear in no blob or commit message. The brief no longer quotes private research. The public history
+is one squashed commit with the same tree as the full local history, which stays on the local
+branch `local-history` and is never pushed. The soundtrack is not a release asset: Mixkit's licence
+forbids redistributing the audio on its own.
