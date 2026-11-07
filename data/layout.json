@@ -1,0 +1,963 @@
+{
+  "_note": "Written by scripts/bake.mjs. Never hand-edit; re-run `npm run bake`.",
+  "knob": {
+    "source": "# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+    "svg": "baked/knob-flat.svg",
+    "sheetSvg": "baked/knob-flat.sheet.svg",
+    "viewBox": {
+      "x": -1668,
+      "y": -1668,
+      "w": 10928,
+      "h": 12340
+    },
+    "s2": [
+      {
+        "key": "room",
+        "line": 20,
+        "box": {
+          "x": 4500,
+          "y": 0,
+          "w": 3300,
+          "h": 5400
+        }
+      },
+      {
+        "key": "door",
+        "line": 28,
+        "box": {
+          "x": 4450,
+          "y": 4100,
+          "w": 100,
+          "h": 800
+        }
+      },
+      {
+        "key": "window",
+        "line": 32,
+        "box": {
+          "x": 5550,
+          "y": -122.4,
+          "w": 1200,
+          "h": 244.8
+        }
+      }
+    ],
+    "roomCard": {
+      "name": "Living / Kitchen",
+      "area_net_m2": 22.84,
+      "area_centreline_m2": 24.3,
+      "size_mm": {
+        "w": 4500,
+        "h": 5400
+      },
+      "use": "living, kitchen",
+      "neighbours": [
+        "Bedroom",
+        "Entry"
+      ],
+      "doors": 1,
+      "windows": 1,
+      "openings": 1,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 4500,
+        "h": 5400
+      }
+    },
+    "sheetViewBox": {
+      "x": -6806.25,
+      "y": -2115,
+      "w": 21000,
+      "h": 14850
+    },
+    "scheduleBox": {
+      "x": -254,
+      "y": 9827.5,
+      "w": 3383,
+      "h": 1400
+    }
+  },
+  "sweep": {
+    "impactSummary": [
+      "Lets (1):",
+      "Changed (21):",
+      "Held (3):",
+      "Broke (0): none"
+    ],
+    "frames": [
+      {
+        "value": 4500,
+        "net_m2": 54,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1668,
+          "y": -1668,
+          "w": 10928,
+          "h": 12340
+        },
+        "file": "baked/sweep/living-4500.svg"
+      },
+      {
+        "value": 4550,
+        "net_m2": 54.36,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1677.8,
+          "y": -1677.8,
+          "w": 10996.3,
+          "h": 12369
+        },
+        "file": "baked/sweep/living-4550.svg"
+      },
+      {
+        "value": 4600,
+        "net_m2": 54.72,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1687.6,
+          "y": -1687.6,
+          "w": 11064.6,
+          "h": 12398
+        },
+        "file": "baked/sweep/living-4600.svg"
+      },
+      {
+        "value": 4650,
+        "net_m2": 55.09,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1697.4,
+          "y": -1697.4,
+          "w": 11132.9,
+          "h": 12427
+        },
+        "file": "baked/sweep/living-4650.svg"
+      },
+      {
+        "value": 4700,
+        "net_m2": 55.44,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1707.2,
+          "y": -1707.2,
+          "w": 11201.2,
+          "h": 12456
+        },
+        "file": "baked/sweep/living-4700.svg"
+      },
+      {
+        "value": 4750,
+        "net_m2": 55.8,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1717,
+          "y": -1717,
+          "w": 11269.5,
+          "h": 12485
+        },
+        "file": "baked/sweep/living-4750.svg"
+      },
+      {
+        "value": 4800,
+        "net_m2": 56.16,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1726.8,
+          "y": -1726.8,
+          "w": 11337.8,
+          "h": 12514
+        },
+        "file": "baked/sweep/living-4800.svg"
+      },
+      {
+        "value": 4850,
+        "net_m2": 56.52,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1736.6,
+          "y": -1736.6,
+          "w": 11406.1,
+          "h": 12543
+        },
+        "file": "baked/sweep/living-4850.svg"
+      },
+      {
+        "value": 4900,
+        "net_m2": 56.88,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1746.4,
+          "y": -1746.4,
+          "w": 11474.4,
+          "h": 12572
+        },
+        "file": "baked/sweep/living-4900.svg"
+      },
+      {
+        "value": 4950,
+        "net_m2": 57.24,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1756.2,
+          "y": -1756.2,
+          "w": 11542.7,
+          "h": 12601
+        },
+        "file": "baked/sweep/living-4950.svg"
+      },
+      {
+        "value": 5000,
+        "net_m2": 57.6,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1766,
+          "y": -1766,
+          "w": 11611,
+          "h": 12630
+        },
+        "file": "baked/sweep/living-5000.svg"
+      },
+      {
+        "value": 5050,
+        "net_m2": 57.97,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1775.8,
+          "y": -1775.8,
+          "w": 11679.3,
+          "h": 12659
+        },
+        "file": "baked/sweep/living-5050.svg"
+      },
+      {
+        "value": 5100,
+        "net_m2": 58.32,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1785.6,
+          "y": -1785.6,
+          "w": 11747.6,
+          "h": 12688
+        },
+        "file": "baked/sweep/living-5100.svg"
+      },
+      {
+        "value": 5150,
+        "net_m2": 58.68,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1795.4,
+          "y": -1795.4,
+          "w": 11815.9,
+          "h": 12717
+        },
+        "file": "baked/sweep/living-5150.svg"
+      },
+      {
+        "value": 5200,
+        "net_m2": 59.04,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1805.2,
+          "y": -1805.2,
+          "w": 11884.2,
+          "h": 12746
+        },
+        "file": "baked/sweep/living-5200.svg"
+      },
+      {
+        "value": 5250,
+        "net_m2": 59.41,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1815,
+          "y": -1815,
+          "w": 11952.5,
+          "h": 12775
+        },
+        "file": "baked/sweep/living-5250.svg"
+      },
+      {
+        "value": 5300,
+        "net_m2": 59.76,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1824.8,
+          "y": -1824.8,
+          "w": 12020.8,
+          "h": 12804
+        },
+        "file": "baked/sweep/living-5300.svg"
+      },
+      {
+        "value": 5350,
+        "net_m2": 60.12,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1834.6,
+          "y": -1834.6,
+          "w": 12089.1,
+          "h": 12833
+        },
+        "file": "baked/sweep/living-5350.svg"
+      },
+      {
+        "value": 5400,
+        "net_m2": 60.48,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1844.4,
+          "y": -1844.4,
+          "w": 12157.4,
+          "h": 12862
+        },
+        "file": "baked/sweep/living-5400.svg"
+      },
+      {
+        "value": 5450,
+        "net_m2": 60.85,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1854.2,
+          "y": -1854.2,
+          "w": 12225.7,
+          "h": 12891
+        },
+        "file": "baked/sweep/living-5450.svg"
+      },
+      {
+        "value": 5500,
+        "net_m2": 61.2,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1864,
+          "y": -1864,
+          "w": 12294,
+          "h": 12920
+        },
+        "file": "baked/sweep/living-5500.svg"
+      },
+      {
+        "value": 5550,
+        "net_m2": 61.56,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1873.8,
+          "y": -1873.8,
+          "w": 12362.3,
+          "h": 12949
+        },
+        "file": "baked/sweep/living-5550.svg"
+      },
+      {
+        "value": 5600,
+        "net_m2": 61.92,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1883.6,
+          "y": -1883.6,
+          "w": 12430.6,
+          "h": 12978
+        },
+        "file": "baked/sweep/living-5600.svg"
+      },
+      {
+        "value": 5650,
+        "net_m2": 62.29,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1893.4,
+          "y": -1893.4,
+          "w": 12498.9,
+          "h": 13007
+        },
+        "file": "baked/sweep/living-5650.svg"
+      },
+      {
+        "value": 5700,
+        "net_m2": 62.64,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1903.2,
+          "y": -1903.2,
+          "w": 12567.2,
+          "h": 13036
+        },
+        "file": "baked/sweep/living-5700.svg"
+      },
+      {
+        "value": 5750,
+        "net_m2": 63,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1913,
+          "y": -1913,
+          "w": 12635.5,
+          "h": 13065
+        },
+        "file": "baked/sweep/living-5750.svg"
+      },
+      {
+        "value": 5800,
+        "net_m2": 63.36,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1922.8,
+          "y": -1922.8,
+          "w": 12703.8,
+          "h": 13094
+        },
+        "file": "baked/sweep/living-5800.svg"
+      },
+      {
+        "value": 5850,
+        "net_m2": 63.73,
+        "rooms": 4,
+        "viewBox": {
+          "x": -1932.6,
+          "y": -1932.6,
+          "w": 12772.1,
+          "h": 13123
+        },
+        "file": "baked/sweep/living-5850.svg"
+      }
+    ],
+    "letLine": 15,
+    "tokenCol": 15,
+    "from": 4500,
+    "to": 5850
+  },
+  "broken": {
+    "source": "# broken-flat.arch: written by scripts/bake.mjs from knob-flat.arch (core examples, MIT).\n# Edits, and nothing else:\n#   1. deleted: \"door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\"\n#   2. added after the bed: \"furniture wardrobe     against r_bed.top offset 1100 size 900x600\"\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 1100 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+    "step1Source": "# broken-flat.step1.arch: written by scripts/bake.mjs. broken-flat.arch with edit 1 undone:\n#   the bedroom door line is back where it was; the wardrobe still stands in front of the window.\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 1100 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+    "fixedSource": "# broken-flat.fixed.arch: written by scripts/bake.mjs. broken-flat.arch with both fixes:\n#   1. the bedroom door line is back where it was;\n#   2. the wardrobe slid 500 mm along the wall (offset 1100 -> 600), as lint's hint says.\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 600 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+    "svg": "baked/broken-flat.svg",
+    "checksSvg": "baked/broken-flat.checks.svg",
+    "step1Svg": "baked/broken-flat.step1.svg",
+    "step1ChecksSvg": "baked/broken-flat.step1.checks.svg",
+    "fixedSvg": "baked/broken-flat.fixed.svg",
+    "viewBox": {
+      "x": -1668,
+      "y": -1668,
+      "w": 10928,
+      "h": 12340
+    },
+    "findings": [
+      {
+        "code": "W_ROOM_DISCONNECTED",
+        "message": "Room \"Bedroom\" has no door or opening — it can't be entered.",
+        "fix": "Add a `door` on one of the room's walls.",
+        "hint": "Add a `door` or a cased `opening` on one of its walls.",
+        "line": 24
+      },
+      {
+        "code": "W_FURNITURE_OVER_WINDOW",
+        "message": "The wardrobe in Bedroom stands in front of 500 mm of a 1200 mm window: a tall unit against the glass blocks its light and view.",
+        "fix": "Slide the unit along the wall clear of the window's span (the hint gives the shorter slide), move the window, or stand a unit no higher than the sill there instead: a worktop, a chest of drawers or a washer goes under a window, a fridge or a wardrobe beside it.",
+        "hint": "\"wardrobe_6\" covers 500 mm of window \"window_2\" on the exterior wall derived from the rooms: slide it 500 mm along the wall past the window's start (its end nearer the wall's first point), or move the window, or stand a unit no higher than the sill (900 mm) there instead.",
+        "line": 43
+      }
+    ],
+    "panel": [
+      {
+        "source": "# broken-flat.arch: written by scripts/bake.mjs from knob-flat.arch (core examples, MIT).\n# Edits, and nothing else:\n#   1. deleted: \"door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\"\n#   2. added after the bed: \"furniture wardrobe     against r_bed.top offset 1100 size 900x600\"\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 1100 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+        "findings": [
+          {
+            "code": "W_ROOM_DISCONNECTED",
+            "message": "Room \"Bedroom\" has no door or opening — it can't be entered.",
+            "fix": "Add a `door` on one of the room's walls.",
+            "hint": "Add a `door` or a cased `opening` on one of its walls.",
+            "line": 24
+          },
+          {
+            "code": "W_FURNITURE_OVER_WINDOW",
+            "message": "The wardrobe in Bedroom stands in front of 500 mm of a 1200 mm window: a tall unit against the glass blocks its light and view.",
+            "fix": "Slide the unit along the wall clear of the window's span (the hint gives the shorter slide), move the window, or stand a unit no higher than the sill there instead: a worktop, a chest of drawers or a washer goes under a window, a fridge or a wardrobe beside it.",
+            "hint": "\"wardrobe_6\" covers 500 mm of window \"window_2\" on the exterior wall derived from the rooms: slide it 500 mm along the wall past the window's start (its end nearer the wall's first point), or move the window, or stand a unit no higher than the sill (900 mm) there instead.",
+            "line": 43
+          }
+        ]
+      },
+      {
+        "source": "# broken-flat.arch: written by scripts/bake.mjs from knob-flat.arch (core examples, MIT).\n# Edits, and nothing else:\n#   1. deleted: \"door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\"\n#   2. added after the bed: \"furniture wardrobe     against r_bed.top offset 1100 size 900x600\"\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 1100 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+        "findings": [
+          {
+            "code": "W_FURNITURE_OVER_WINDOW",
+            "message": "The wardrobe in Bedroom stands in front of 500 mm of a 1200 mm window: a tall unit against the glass blocks its light and view.",
+            "fix": "Slide the unit along the wall clear of the window's span (the hint gives the shorter slide), move the window, or stand a unit no higher than the sill there instead: a worktop, a chest of drawers or a washer goes under a window, a fridge or a wardrobe beside it.",
+            "hint": "\"wardrobe_6\" covers 500 mm of window \"window_2\" on the exterior wall derived from the rooms: slide it 500 mm along the wall past the window's start (its end nearer the wall's first point), or move the window, or stand a unit no higher than the sill (900 mm) there instead.",
+            "line": 44
+          }
+        ]
+      },
+      {
+        "source": "# broken-flat.arch: written by scripts/bake.mjs from knob-flat.arch (core examples, MIT).\n# Edits, and nothing else:\n#   1. deleted: \"door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\"\n#   2. added after the bed: \"furniture wardrobe     against r_bed.top offset 1100 size 900x600\"\n# A one-bed flat you can resize: three numbers at the top size the whole plan.\n#\n# The rooms are sized from the three `let`s and placed by relation (`right-of`,\n# `below`), `walls from rooms` derives the shell and the partitions from them, every\n# opening is hosted by the rooms it joins, and every fixture is anchored to its room.\n# So a change to any of the three numbers moves the walls, the doors, the windows, the\n# furniture and the dimensions with it, and nothing needs editing by hand. In the\n# playground each `let` is a slider.\nplan \"One-Bed Flat (resizable)\" {\n  units mm\n  grid 50\n  north up\n  dims auto all\n\n  let LIVING = 4500    # living room width\n  let BEDROOM = 3300   # bedroom width\n  let DEPTH = 5400     # living and bedroom depth\n\n  room id=r_live at (0,0) size LIVING x DEPTH label \"Living / Kitchen\" uses living kitchen\n  room id=r_bed  right-of r_live align top gap 0 size BEDROOM x DEPTH label \"Bedroom\" uses bedroom\n  room id=r_hall below r_live align left gap 0 size LIVING x 2100 label \"Entry\" uses hall\n  room id=r_bath right-of r_hall align top gap 0 size BEDROOM x 2100 label \"Bath\" uses bath\n\n  # The entry runs into the living room with no leaf: an opening across the whole edge.\n  walls from rooms exterior 200 partition 100 { open between r_hall and r_live }\n\n  door id=d_front on r_hall.bottom at center width 900 hinge near start swing into r_hall\n  door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed\n  door between r_hall and r_bath at 900 from start width 800 hinge near start swing into r_bath\n\n  window on r_live.top width 1800\n  window on r_bed.top  width 1200\n  window on r_bath.bottom width 600\n\n  furniture counter      against r_live.left offset 400  size 600x600\n  furniture stove        against r_live.left offset 1000 size 600x600\n  furniture kitchen_sink against r_live.left offset 1800 size 800x600\n  furniture sofa         in r_live anchor top-right flush size 800x1600 label \"Sofa\"\n  furniture bed          in r_bed  anchor top-right flush size 1400x2000 label \"Bed\"\n  furniture wardrobe     against r_bed.top offset 600 size 900x600\n  furniture shower       in r_bath anchor top-right flush size 900x900\n  furniture wc           against r_bath.bottom offset 1500 size 400x700\n  furniture basin        against r_bath.bottom offset 600 size 600x450\n\n  title { project \"One-Bed Flat (resizable)\" drawn_by \"ArchLang\" date \"2026-11-06\" }\n}\n",
+        "findings": []
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "code": "W_ROOM_DISCONNECTED",
+        "boxes": [
+          {
+            "x": 4469.15,
+            "y": -30.85,
+            "w": 3361.7,
+            "h": 5461.7
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "code": "W_FURNITURE_OVER_WINDOW",
+        "boxes": [
+          {
+            "x": 5047.17,
+            "y": -2.83,
+            "w": 1105.67,
+            "h": 805.67
+          }
+        ]
+      }
+    ],
+    "doorLine": "door between r_live and r_bed  at 900 from end width 800 hinge near end swing into r_bed",
+    "doorLineAt": 30,
+    "wardrobeBad": "furniture wardrobe     against r_bed.top offset 1100 size 900x600",
+    "wardrobeOk": "furniture wardrobe     against r_bed.top offset 600 size 900x600"
+  },
+  "finish": {
+    "command": "npx @chanmeng666/archlang finish plan.arch",
+    "terminal": [
+      "--- a/plan.arch",
+      "+++ b/plan.arch",
+      "@@ -13,6 +13,11 @@",
+      "   grid 50            # partitions are 100 thick, so a `flush` fixture lands on a …50",
+      "   north up",
+      "   site { street north }",
+      "+  paper A3 landscape",
+      "+  scale 1:50",
+      "+  dims auto all",
+      "+  schedule rooms",
+      "+  legend",
+      "   wall id=w_lane   exterior  thickness 200 { (0,0) (7500,0) }",
+      "   wall id=w_east   exterior  thickness 200 { (7500,0) (7500,6500) }",
+      "@@ -38,9 +43,20 @@",
+      "   window on w_garden at 700  width 1000",
+      "   window on w_garden at 5850 width 1600",
+      "   window on w_east   at 1500 width 600",
+      "+  furniture kitchen_sink against wall w_west offset 500 side right in r_live",
+      "+  furniture stove against wall w_west offset 1200 side right in r_live",
+      "+  furniture counter against wall w_west offset 1800 side right in r_live",
+      "+  furniture sofa in r_live anchor right flush size 900x2000 rotate 90",
+      "+  furniture coffee_table in r_live anchor right flush inset 1300 size 600x1000 rotate 90",
+      "+  furniture wc against wall w_lane offset 6950 side left in r_bath",
+      "+  furniture basin against wall w_lane offset 5825 side left in r_bath",
+      "+  furniture bathtub against wall w_bath offset 900 side right in r_bath",
+      "+  furniture bed in r_bed anchor top-right flush size 2000x1500 rotate 90",
+      "+  furniture wardrobe in r_bed anchor bottom-right flush size 600x1800 rotate 90",
+      "   # The rug is an UNDERLAY, drawn before the pieces that stand on it so the sofa and",
+      "   # table sit visibly on top rather than hiding it — anchored to the room, like",
+      "   # everything else here, never a coordinate.",
+      "+  title { project \"Laneway House\" }",
+      " }",
+      "  added furniture kitchen_sink against wall w_west offset 500 side right in r_live — \"r_live\" (kitchen, living) held no furniture",
+      "  added furniture stove against wall w_west offset 1200 side right in r_live — \"r_live\" (kitchen, living) held no furniture",
+      "  added furniture counter against wall w_west offset 1800 side right in r_live — \"r_live\" (kitchen, living) held no furniture",
+      "  added furniture sofa in r_live anchor right flush size 900x2000 rotate 90 — \"r_live\" (kitchen, living) held no furniture",
+      "  added furniture coffee_table in r_live anchor right flush inset 1300 size 600x1000 rotate 90 — \"r_live\" (kitchen, living) held no furniture",
+      "  added furniture wc against wall w_lane offset 6950 side left in r_bath — \"r_bath\" (bath) held no furniture",
+      "  added furniture basin against wall w_lane offset 5825 side left in r_bath — \"r_bath\" (bath) held no furniture",
+      "  added furniture bathtub against wall w_bath offset 900 side right in r_bath — \"r_bath\" (bath) held no furniture",
+      "  added furniture bed in r_bed anchor top-right flush size 2000x1500 rotate 90 — \"r_bed\" (bedroom) held no furniture",
+      "  added furniture wardrobe in r_bed anchor bottom-right flush size 600x1800 rotate 90 — \"r_bed\" (bedroom) held no furniture",
+      "  added paper A3 landscape — the finest standard scale that fits the smallest sheet: the drawing measures 7700×6700 mm",
+      "  added scale 1:50 — the finest standard scale that fits the smallest sheet: the drawing measures 7700×6700 mm",
+      "  added dims auto all — the plan has no dimensions",
+      "  added schedule rooms — the sheet has no room schedule",
+      "  added legend — the sheet has no legend for the materials and symbols it draws",
+      "  added title { project \"Laneway House\" } — the sheet has no title block; the project is the plan's own name",
+      "✓ plan.arch → plan.arch (16 statements)"
+    ],
+    "bareSvg": "baked/laneway-bare.svg",
+    "finishedSvg": "baked/laneway-finished.svg",
+    "changes": [
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture kitchen_sink against wall w_west offset 500 side right in r_live"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture stove against wall w_west offset 1200 side right in r_live"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture counter against wall w_west offset 1800 side right in r_live"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture sofa in r_live anchor right flush size 900x2000 rotate 90"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture coffee_table in r_live anchor right flush inset 1300 size 600x1000 rotate 90"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture wc against wall w_lane offset 6950 side left in r_bath"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture basin against wall w_lane offset 5825 side left in r_bath"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture bathtub against wall w_bath offset 900 side right in r_bath"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture bed in r_bed anchor top-right flush size 2000x1500 rotate 90"
+      },
+      {
+        "stage": "furnish",
+        "statement": "furniture",
+        "text": "furniture wardrobe in r_bed anchor bottom-right flush size 600x1800 rotate 90"
+      },
+      {
+        "stage": "sheet",
+        "statement": "paper",
+        "text": "paper A3 landscape"
+      },
+      {
+        "stage": "sheet",
+        "statement": "scale",
+        "text": "scale 1:50"
+      },
+      {
+        "stage": "sheet",
+        "statement": "dims",
+        "text": "dims auto all"
+      },
+      {
+        "stage": "sheet",
+        "statement": "schedule",
+        "text": "schedule rooms"
+      },
+      {
+        "stage": "sheet",
+        "statement": "legend",
+        "text": "legend"
+      },
+      {
+        "stage": "sheet",
+        "statement": "title",
+        "text": "title { project \"Laneway House\" }"
+      }
+    ],
+    "themes": [
+      {
+        "name": "blueprint",
+        "svg": "baked/laneway-finished.blueprint.svg"
+      },
+      {
+        "name": "presentation",
+        "svg": "baked/laneway-finished.presentation.svg"
+      },
+      {
+        "name": "rendered",
+        "svg": "baked/laneway-finished.rendered.svg"
+      }
+    ]
+  },
+  "exports": {
+    "files": {
+      "svg": {
+        "file": "baked/export/plan.svg",
+        "bytes": 55584
+      },
+      "dxf": {
+        "file": "baked/export/plan.dxf",
+        "bytes": 70562
+      },
+      "pdf": {
+        "file": "baked/export/plan.pdf",
+        "bytes": 21980
+      },
+      "png": {
+        "file": "baked/export/plan.png",
+        "bytes": 155660
+      },
+      "glb": {
+        "file": "baked/export/plan.glb",
+        "bytes": 111160
+      }
+    },
+    "thumbs": {
+      "svg": "baked/export/thumb-svg.png",
+      "dxf": "baked/export/thumb-dxf.png",
+      "pdf": "baked/export/thumb-pdf.png",
+      "png": "baked/export/thumb-png.png"
+    },
+    "dxfBlocks": [
+      "DOOR-HINGED-900",
+      "DOOR-SLIDING-1800",
+      "DOOR-HINGED-800",
+      "DOOR-POCKET-800",
+      "WINDOW-1200",
+      "WINDOW-1000",
+      "WINDOW-1600",
+      "WINDOW-600"
+    ],
+    "glbKinds": {
+      "door": 4,
+      "floor": 3,
+      "furniture": 10,
+      "roof": 1,
+      "slab": 1,
+      "wall": 6,
+      "window": 8
+    }
+  },
+  "gallery": [
+    {
+      "name": "accessible",
+      "svg": "baked/gallery/accessible.svg",
+      "glb": "baked/glb/accessible.glb"
+    },
+    {
+      "name": "aquarium",
+      "svg": "baked/gallery/aquarium.svg",
+      "glb": "baked/glb/aquarium.glb"
+    },
+    {
+      "name": "attached",
+      "svg": "baked/gallery/attached.svg",
+      "glb": "baked/glb/attached.glb"
+    },
+    {
+      "name": "bungalow",
+      "svg": "baked/gallery/bungalow.svg",
+      "glb": "baked/glb/bungalow.glb"
+    },
+    {
+      "name": "classroom-block",
+      "svg": "baked/gallery/classroom-block.svg",
+      "glb": "baked/glb/classroom-block.glb"
+    },
+    {
+      "name": "clinic",
+      "svg": "baked/gallery/clinic.svg",
+      "glb": "baked/glb/clinic.glb"
+    },
+    {
+      "name": "corner-cafe",
+      "svg": "baked/gallery/corner-cafe.svg",
+      "glb": "baked/glb/corner-cafe.glb"
+    },
+    {
+      "name": "courtyard-house",
+      "svg": "baked/gallery/courtyard-house.svg",
+      "glb": "baked/glb/courtyard-house.glb"
+    },
+    {
+      "name": "furnished-flat",
+      "svg": "baked/gallery/furnished-flat.svg",
+      "glb": "baked/glb/furnished-flat.glb"
+    },
+    {
+      "name": "gallery-l",
+      "svg": "baked/gallery/gallery-l.svg",
+      "glb": "baked/glb/gallery-l.glb"
+    },
+    {
+      "name": "garden-house",
+      "svg": "baked/gallery/garden-house.L1.svg",
+      "glb": "baked/glb/garden-house.glb"
+    },
+    {
+      "name": "garden-loft",
+      "svg": "baked/gallery/garden-loft.svg",
+      "glb": "baked/glb/garden-loft.glb"
+    },
+    {
+      "name": "hexagon-pavilion",
+      "svg": "baked/gallery/hexagon-pavilion.svg",
+      "glb": "baked/glb/hexagon-pavilion.glb"
+    },
+    {
+      "name": "hillside-villa",
+      "svg": "baked/gallery/hillside-villa.L1.svg",
+      "glb": "baked/glb/hillside-villa.glb"
+    },
+    {
+      "name": "imports",
+      "svg": "baked/gallery/imports.svg",
+      "glb": "baked/glb/imports.glb"
+    },
+    {
+      "name": "knob-flat",
+      "svg": "baked/gallery/knob-flat.svg",
+      "glb": "baked/glb/knob-flat.glb"
+    },
+    {
+      "name": "laneway-house",
+      "svg": "baked/gallery/laneway-house.svg",
+      "glb": "baked/glb/laneway-house.glb"
+    },
+    {
+      "name": "library",
+      "svg": "baked/gallery/library.svg",
+      "glb": "baked/glb/library.glb"
+    },
+    {
+      "name": "materials",
+      "svg": "baked/gallery/materials.svg",
+      "glb": "baked/glb/materials.glb"
+    },
+    {
+      "name": "museum",
+      "svg": "baked/gallery/museum.svg",
+      "glb": "baked/glb/museum.glb"
+    },
+    {
+      "name": "museum-wing",
+      "svg": "baked/gallery/museum-wing.svg",
+      "glb": "baked/glb/museum-wing.glb"
+    },
+    {
+      "name": "museum-wings",
+      "svg": "baked/gallery/museum-wings.svg",
+      "glb": "baked/glb/museum-wings.glb"
+    },
+    {
+      "name": "one-room",
+      "svg": "baked/gallery/one-room.svg",
+      "glb": "baked/glb/one-room.glb"
+    },
+    {
+      "name": "parametric",
+      "svg": "baked/gallery/parametric.svg",
+      "glb": "baked/glb/parametric.glb"
+    },
+    {
+      "name": "practice-office",
+      "svg": "baked/gallery/practice-office.svg",
+      "glb": "baked/glb/practice-office.glb"
+    },
+    {
+      "name": "relational",
+      "svg": "baked/gallery/relational.svg",
+      "glb": "baked/glb/relational.glb"
+    },
+    {
+      "name": "remodel",
+      "svg": "baked/gallery/remodel.svg",
+      "glb": "baked/glb/remodel.glb"
+    },
+    {
+      "name": "sheet-notes",
+      "svg": "baked/gallery/sheet-notes.svg",
+      "glb": "baked/glb/sheet-notes.glb"
+    },
+    {
+      "name": "studio",
+      "svg": "baked/gallery/studio.svg",
+      "glb": "baked/glb/studio.glb"
+    },
+    {
+      "name": "terrace-row",
+      "svg": "baked/gallery/terrace-row.svg",
+      "glb": "baked/glb/terrace-row.glb"
+    },
+    {
+      "name": "themed",
+      "svg": "baked/gallery/themed.svg",
+      "glb": "baked/glb/themed.glb"
+    },
+    {
+      "name": "tiny-house",
+      "svg": "baked/gallery/tiny-house.svg",
+      "glb": "baked/glb/tiny-house.glb"
+    },
+    {
+      "name": "townhouse",
+      "svg": "baked/gallery/townhouse.L1.svg",
+      "glb": "baked/glb/townhouse.glb"
+    },
+    {
+      "name": "transit-hall",
+      "svg": "baked/gallery/transit-hall.svg",
+      "glb": "baked/glb/transit-hall.glb"
+    },
+    {
+      "name": "turning-stair",
+      "svg": "baked/gallery/turning-stair.L1.svg",
+      "glb": "baked/glb/turning-stair.glb"
+    },
+    {
+      "name": "two-bed",
+      "svg": "baked/gallery/two-bed.svg",
+      "glb": "baked/glb/two-bed.glb"
+    },
+    {
+      "name": "two-storey",
+      "svg": "baked/gallery/two-storey.L1.svg",
+      "glb": "baked/glb/two-storey.glb"
+    }
+  ],
+  "doors": {
+    "order": [
+      {
+        "key": "agent",
+        "label": "Your coding agent"
+      },
+      {
+        "key": "chatgpt",
+        "label": "ArchLang app in ChatGPT"
+      },
+      {
+        "key": "claudeai",
+        "label": "claude.ai connector"
+      },
+      {
+        "key": "vscode",
+        "label": "VS Code extension"
+      },
+      {
+        "key": "playground",
+        "label": "Playground"
+      }
+    ],
+    "agentPrompt": [
+      "1. Run: npx -y skills add ChanMeng666/archlang --yes",
+      "2. Run: npx -y @chanmeng666/archlang spec   (read it before writing anything)",
+      "3. Write my floor plan as plan.arch from this brief: <describe rooms, areas, adjacencies>",
+      "4. Run: npx -y @chanmeng666/archlang compile plan.arch -o plan.svg --json",
+      "   then describe plan.arch --json, validate plan.arch --strict --json (same prefix); fix, recompile",
+      "5. Run: npx -y @chanmeng666/archlang finish plan.arch, then compile again to export.",
+      "Starting from a photo or PDF? Read https://archlang.uk/from-an-image. To change one room without moving the others, use `impact --lock` (https://archlang.uk/edit-one-room)."
+    ],
+    "chatgptExample": "Draw a two-bedroom flat of about 75 m² as an ArchLang plan, and check it.",
+    "mcpLine": "claude mcp add --transport http archlang https://mcp.archlang.uk/mcp"
+  },
+  "links": {
+    "knob-flat": "https://playground.archlang.uk/#z=jZVBbxs3EIXv-ysepIsNWCql2KodwIcYcdugbl00Qa8WdzkrMqFIgRx5pRj-7wW5Wmtlu051WmqH37wZvuEO8QHe0agkhdpKxtavUUmHQNF8p_dgHYjg1suSQoRksCawXyG9zotGe0tYWenGxbAY4osmBO-XETJQDlOog1-2OzNubonnEdKptK8ihXKLQFay8Q5H82AWmke-np8UQ8xLsr6ZH59g3khrYwvLGeZQFMw9xcyOmqzN0LRaycAm8eJT9uUJ6J7CthjCr8gZt4CJ0D5yq4CflBvGV29cPMm4vAm12fA6UNoiXaV9IAX2MBzzpnExxGcPiUpLt0g9gnRb-LpXd9fGpe8054pO8qPyPuweG-OUb9pFMUS9Ds7k3F1xyizJxVxcY1jDcKvUedapLEekIkgZTqtyCy2dGuOT2xFXVm4Xwa9TcbLS7YHkyhCtURTGRTpQDG4dja5I4ZfkjaNsCllaOh7goQDWLlW_XBbAIhiFM1EAzgfWWK8KJJkRcp1aYW1RAJYYN5_--fTnr7jE6ZkQADCENfdJZ2ojGqNY70Kvrj_-fXv7By7x7l2OHaIk9SLs4_VfX37DJc5OW-CemHrS7VC0Yp1E5JVRl-HOmntKnj4SJ-K4dfRO3WYHtbIki8FNi_sJvxuuNLkB1pFil-Vb--cBOg0UOh-jS2XNwuXpWcgVRJuxK_JZyqtW9i7TroiDFFpaizwch3xLNfcTPJU0nQjR4a8dh-0OnkCH4iXrvvic6Qfi-_AryboTLtumt_cCpawIaxdhHPvs5cPDZw3nYUnW7yHd05zKKvgYe_cNqQWNC-D5lQDaMAXjA6ZC7C8BJHUPGYeSuCFyT3U51fXvMSlNc5jaoO7q4B3Dd5Hj0jP7ZTJMRY4ptCbEhRBIU0dwJAMiy8CITb5eUpHt7o68z94eWc6e3SI5o3It5NSOfn5ITy8O2CWpl-heYfks--hW36vwV6R359deSW0zkvBxMkILmZwL8SyiJJUDuojpywjJumtoGzQTIiXaX3aVX-cu559cSOMid9mzx31dR2Lkqc9unAmxmeVUe0pkf0_ADykTIcR_U3YjfheN-_Ym5byjnL-mxdeykwLT80D6nKTRGuWhQ23XUe8xk9l-tD77Wg4OoNk7B9DWTW9AJ6dCbKaiN7CkDqFR-6Zr_Q6affQG9EKIzcWzgptqL63Xtv7hd4076xqXtP38jFPKaNz_4sz6p3h6li3Fhi3hAavgv1LFb33VVJCNuyu3GHwIlb6RbjGAkkwYTMV0NppMRmI2wGPxWPwL&edit",
+    "broken-flat": "https://playground.archlang.uk/#z=nZZNbxs3EIbv-yteSBcbkJSVYquOAR9ixG2NOk3RGL1a3OWsSJsiBXLklRrkvxfk7lorxXCL-iTKw2feGc6Hhii8eyI7rozgifClukTtNTNZFDuE0us1h3eFeKLJ6jGg8m6FJ-uK_QWclM4TaCtWa0NhhM-396eTbIgbqTmMIKyEday0XYJMoMtsCGA6gSRDTPISA-mcR0FcE1n4B6OfKV3zDwVJQDA-5Hnjm6xErSUrXOQ5IpRgSfj0j1BHJ9qya64OkqvZBEJKkhAVkwcrQpHcVhtvNW88oRZeelcQ4p9YCm0DN4gJuzVcVQViTKd5jqD_pihnO8_zyP8IZ2kcdcaMYOc2KIWFp2h4CVaeCHazKsiHGEl0H5mJEw-1coawNsJOsmE2xL0ieOdWAcJTMpNN6Olmwi0M8SKkFK2NKEnGt_JkBGtncbLweql47KrFKBtiUZBx9eJ0hEUtjGnfMHlYQJLXzxQSOygyJkHjaS0868gLL95XI9Az-V02hFuTTbkOUC5wo4BflGvGo9O2ff10CZXeplzrKLxUzpMEO2gO6VKsmK8OAqUS8VHZQdgdXNWLu0vjynWaU0Sj9DEWUfux1la6ujlkQ-zfuQtO6hXZkIKrNStoPqxTSyQDSGqOp2IHJayc4Na2xLURu6V3mxicKFXzICkyBKMl-UkWHxSDL5bG1yTxc6yNk1QUojB0OsC3DNjYGP1qlQFLryXO8wywzrPCZp0hygwQm5gKY7IMMMS4u_3r9vdfcIWz8zyP9TqE0c9RZ0xj0xyt6fXNpz-_fPmMK7x_n2yHsfJ_MPt088f9r7jC-VkD3BNjTrobktasooh00vKqa1TGST7KT5uKbtVtW6gRBRkM7hrcO_ymuVRkB9gECp2Xp-bLA3Rq_K6OX2aC0Uubumcp1mh7sQvyyOV1I7v11AZx4EIJY5Ca45BvqOK-g5eQZrH_W_yNZb9r4RF0KF6w6otPnv5FfB9-LVh1wkWT9GYuUPQKv7GhmXKxlg8fnxWsgyFRXULYlz4VpXch9OYNySVNMuB4JIC2TF47j1me74cAorpvCdcb1E1caVCn_H2PStMw1_JKPlTeWYbrLCeFY3arWDAl2TiKm0H-4XCQBxaeD0d5m-CjNdHznhLeXxMN5NVF8Qq_S3IzNxrFMaA0_BvI9CLPjyy67dBZzH60EKy6qBujeZ5HR_uJVLpNSsXR5kneUyG2uye1ZiqZebN7DiiB3XOzvN6mTPNug71GafvwIWj79CbloqNcvKbFVaKTAt3b53Hmx_ofp85AZTZB7THT-b7-v7pKDA6gaRwcQJtfBm9Ap2d5vp3lva6KPwj60P-59Q-jVa7unq8VlmrxDWER8-EIU5f78PpSegXUyTnv5MT4fjriFCJo-584834lnJ2nsmTNhvANa-8eqeS31pf0orYPxQ6Dj75Ud8IuB5CCCYNZPpuPp9NxPh_ge_Y9-wc&edit",
+    "furnished-flat": "https://playground.archlang.uk/#z=rVnrbiJHFv7PUxzZP8YjAdOAwRclkZyE2YzWOxN5ZlbK_oGi-0DXuqhiq6qN2ShSHmKfYR8sT7J7TlVfuDo3_hhw11fn8p0r5_ApR3j7-eH9u0-fH8YwV2LhcrmCX37-Dwjwa9OZYWaNWdK_fBvmhdXS5ZjBWvocfI6wzo1CcJvlzChIhRfKLArsts5b5zB-QrsB43O0gM9iuVIImRVrBwLm8tkXFsFYugekhpVwTupFFz7l0oHRCNJBjhZhTg_l4axuncfbHH23dKie0N2Cz6X1mw7KRe7BzPl5_rDp-Nwi1rJl8Ch15togUmucA6EUzOUTts5B6swYC5lZCqkdXMyEz9vwKH2ao35TeKmk37QhGqUNSj5JvXiTSS31og1mPpcpvllKl77uwjtPCojW-Z4hwQq2ic-FBgEuN-uA5wzLnaJUUi_AaHrEgy6WM7SERv99e__hw0PrHO4exndt0MaHM6V6t4Bs9pXEFIP9pANnlrjmDwIsCsX2XZtCZbAwbRA6I5TWOSipfbhrTVc7saHD0OmANhFzrozwjrQF6R2shVJtmIn0kbzmgwpBn5ky9C3ZgAzbBqSDAlKFwgqdsvtTo5TM0AVOCb3xOVuTZJoKm-bwJJTMhEfodJy3MvVTko9AdCDaW1OQNaVeOPCGFMxYPJLEmcKmuGVy-nolU-LfLZ8H6HXh_Qe4v_t6fP-xC3eBaiWt5UIbiw6mSsxQTTk8mPvGZnRZmtM_M3SplTO8eD0l2RkWgBxEggEqh3wyOtlotQGPz56474nydCc9mZolOphbs6xM6boM1-_C3z58_ATfvxt_M_4I39w9PPxAcn98949xF6ZiQbT17BH4QmZfwS8__5fgvyCMr6bgxSO6bbpUcs6N8SsrtYcLAXMrswUTZ5QkIJTRi6AxIc82MBomkCGuXrOXMrTyKQJb44WXRlewpRqBJs5w7HvPYchx1QYBK0UUz4ACjsOEYAUFWmCF9K4EzFFkMyNsFsIDwXLIs2TCIqwtoWs-ZwpP8SX1QiHkQmed1CxXBV0eYqpbok7NfO4wECvESSAJpvjKwTfj958exqCEztyuNWyho1pRH_qmhCW0KI8g4jv8V4HM-zmkqL1FF0JYOEiN1WhdJdIHJkiOMLeIHeeFzogdLJOrOHjfcWYu2iDsMs2FtG1IzXyOCF7MFLYh5Kb4qRaLVGlDhu6xTFsQj6-U0L4Ntli0YSWFNuwLZQq9QMvXZpgqwZlk6uS_cVrBzjAVhcPgMm2CfXyZgspAoAyBSsGUDTkNDJlmuPL5NCg_6MKn78bw8Pkv8O4j3L2Hz--_HT_c3_1QJtW1UI_IBGiGtTUFKRXjK9qptFspo9EgKQFLhySieUKrxArWwrKdYiKEVNq0UMxkyncm68ylUsAVAx1I34WHYuEq1UkXBLEsqRFLVJspGZJJoQni_yQnG1bGyHGzRVsxp_SbCl0bFXKZZagp7qjiBRtdko0exuMyF9w9jOHD38cP343vvq3yeZVSyjQeUixkgou4KbySGm9j6ueXFXqBkBuTgaPsTgYKGnnzhCBCtXFiSRymkGnzF0tprbH10zPhpAbhS9i9Q6WEzJFUzKRGH47TrQr1wudVHRcxqVFmZrtVZp-RUOywwjN1MaaOYN4ZKrMmh6dCU5jFWhNJYhzCSkjrKj5ULNmhBblsVngotJKP4UJbNLznPLHDzJwXqUIuQoJZ2q6CQlQONdmGa7lQqm4C2A6Flv6Vg0JnaJ3MkHoh4cvCH1qtTM7naDmJzNCvEXXTxtRLcRsXLCxDuOSbUGHIQGQK5kUjY_l4i0h9IZTaxAzdbfGBs7dV2_dWCX8GP7aARXWwXLYAFlZmMExaACuxQgt3A1gZ662QvgXgUqEQerf8gDbW51CsWgCZXDoQhQ8xKJTiZ3PMChVrXqsFwSwy-3I9CUcBnz1aaSypK9NHjc5BP0ngR7hI2slruLi-TPjNT1unmUInT5fnwptecp3sgThTvChCPHgCZY0viRLkaBzfOv8o6TishPWS81N9vhfOD5OoCr8ZjvZloFb2V2AMGroMDqiSC6Um-hRMeX3AOCQKY7jTGKOGHKMDclCfcFqdwag6Gt4fdA21H6dxRrUI4X3TR9y5yOxLO1HyCTk_-ejN8KJyCWTZZ7IEcDsJZ_c8RcAb-JZr9RkUVGLCbLGFWoYroZY-LlEHl0nyTD4qUf8aHj6D8sWoEWILNpKhhg2urmF7DdjPYQg620IgH9bqBi-Xgl0zQr9G-E4oVUtVCpaHDFBjzjDr1ZjB5JWyoyR5vkxqzK_jdNU7a2LGmWsXtl_CNkjBsP3rI7D9l2EDcxi2wZEAm-zCCp_vW4AgiEU8gsrsy2wyt0Z76liq_CU8jMiUa5n5HG6SBKjMIWgUllod68FxwZc0iAXHtADOedAPjAr4XNtjMaeHXlXUAGw0UVTC6hY-yMPnw5jH0OW5C2rdi0VYC8S7yECvHJgVErNfQ2aQG0HITDFTyFMjZGatK0G6WxYIccQWiLlGeLjs_QYLEMIWZGD7DuTwqoK8fhGSELYgA1VrSLYsIf5qSELYhezvQQ4vf4OUhLANyRTdl_I3QBJDofRmxV6GjFVJeOiNKkgKey5etFhZhwdDHRceBoP6ucskOfbYiGbNBtz2Y6GY0q3Xp9Cqxy4HyQm0UOCFh_7oFFr12OXlcOsxjodOpwM7KZ2--12vKnap26QGTVez0G1oexvDXtVTh5kwjD5h4IkBLXzZ2TJw7CuF5aZ_iXp3M8XtspNG1_16Yxii5EADlhVh6Raa9y5Dx-WXai474jaF58EwEpWDIsG1YZ3LNC_71bpnz2WGVbJhxWJX25yY6FbeTvJSkaxVvSgl9ykjhwoSUvJVkjz3KZykrpNEDeCfJtTgRoDmWqVkZphjqC04hkGiTlRDiAG1CwOWIgjBlXGYJGFpgsThI1jBzZPoZg8XN0nSvmoo1OOm4qgs5XagloWF6VU16iZJnq-HlSQ3R5Uq9KTcBTBQ72aYtHvDSimKg-er5GUk3jM0fUSh2W6Yh2r8aEejc7iLS4lUWCvR0farsdmtl1hGw6qwK-PCsFfTaVbN2oy3tTQrV3vC0855GRekYb1Fi9O429peanFozEVak_QRN2FDxXmTdgXfK5HSemvDWyhaHD9ipLHR5Uo2DuvbVA7aNqk8TNqDfrJt8N7lAUM5-dxxWObG58DVuBaib5bLsIgtx2wi7G0M193Szx2eN4xMn8uiX9YCWt5za8QTadxTNPUIe6gGg_tE4cGoYiAJ-XwinKzIpPDGHgpJTu8xIjnD1xBVSo798G29f7SFbuzhGnu9EOGMfTgnNwOz4H35y5liSHUsaNpvMrvuyGvU-N3ESf14GpWr41GcsLOBXyHd1c0pHK4PE14KvYQzOIWTSZevafdk_xhOXE8f1iu0ynv5-RBOsVqhnZTbp5M416dwljK1Zi2irU_h9E_6Pexlm9E-vE6SNg0QZZRQVrzZxahIHqez391vHOR47bEjypWRVyWh2CE3HG83FcIpiGFyFEKJQmd2E2JiB4J7-tJTg6MQa-HRTnKkP6cgqI42ICrrVlMm_InWDZMQrzAOZbWKOTe9Sqo4LdQYmhqw0O6dxLi66Q__KEYv6V8Nj2Cshc2smeG-k-PE0YyCIxhPQhODDxAlbnkqQa6Og2QWnTuYZXZABv3hFsier_t_pq_Lyw9qJ-rs179pStXfVg3d41EMwm9mvrreXJVRsQcYfv6ZhP6QG7HLYdK-rnNO2YjtdHR7QDNjHl2Oav6CZIPeliy1yckCnT_-2i6BuVlzr3rA2nXKKItNnHAbOvHvGKdz-lVVG_aOx59Ffu_xdfpyhbvpJ8eF97kvZrvHw_ha3n55XHeZoX_h9uvh1u0tAC-9QvgRVtb8E1O__-sBj36T2QbO7mya3wvaePKv-2f9pD_qJNed_ugMfmr91Pof&edit"
+  },
+  "agent": {
+    "session": "baked/agent/session.json",
+    "planSvg": "baked/agent/plan.svg",
+    "finding": "W_BEDROOM_NO_WINDOW"
+  }
+}

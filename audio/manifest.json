@@ -1,0 +1,259 @@
+{
+  "schema": "film-archlang-2d-3d-audio-manifest/1",
+  "notes": [
+    "Media files are gitignored; `npm run audio` downloads them, checks every SHA-256 below, and copies them to public/audio/ for Remotion.",
+    "Rows marked owner-approved are copied from archlang-cinematic/audio/manifest.json (same URLs, same hashes).",
+    "Kenney files come from a third-party per-file mirror of the official CC0 packs (cc0-sounds.exi.software); the official pack zip is at source_page.",
+    "Loudness figures are those archlang-cinematic measured with ffmpeg ebur128."
+  ],
+  "assets": [
+    {
+      "id": "mixkit-587",
+      "kind": "music",
+      "path": "audio/music/discover-eugenio-mininni-mixkit-587.mp3",
+      "title": "Discover",
+      "author": "Eugenio Mininni",
+      "source_page": "https://mixkit.co/free-stock-music/film-score/",
+      "download_url": "https://assets.mixkit.co/music/587/587.mp3",
+      "licence": {
+        "name": "Mixkit Stock Music Free License",
+        "url": "https://mixkit.co/license/#musicFree"
+      },
+      "sha256": "cc92050b8e2e3a1c8a13d4ee85bc74cd95799c2088096e680167a73b2b390560",
+      "bytes": 4610388,
+      "duration_s": 144,
+      "codec": "mp3",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "genre_tags": "Orchestral Pop; hopeful; reflective; piano; strings; intro",
+      "markers": {
+        "swell_onset_s": 12.6,
+        "swell_full_s": 13.4,
+        "dip_s": [
+          18,
+          28.9
+        ],
+        "second_build_s": 29.6,
+        "full_ensemble_s": 38,
+        "suggested_film_offset_s": 0
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "loudness_range_lu": 16.8,
+        "true_peak_dbfs": -0.9
+      },
+      "role": "music bed, whole film (144 s track, film 140 s; fades in 0.7 s, out over the last 2.3 s)",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "mixkit-sfx-1486",
+      "kind": "sfx",
+      "path": "audio/sfx/mixkit/cinematic-tunnel-reverb-woosh-mixkit-1486.wav",
+      "title": "Cinematic tunnel reverb woosh",
+      "author": "Mixkit (Envato) sound library",
+      "source_page": "https://mixkit.co/free-sound-effects/whoosh/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/1486/1486.wav",
+      "licence": {
+        "name": "Mixkit Sound Effects Free License",
+        "url": "https://mixkit.co/license/#sfxFree"
+      },
+      "sha256": "0c5943e1f934e51d6d40f62ce6448f38be1cbaada103fe6e4ce95c82b660733b",
+      "bytes": 1785332,
+      "duration_s": 6.747,
+      "codec": "pcm_s24le",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S0: the plan tilts into 3D",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "mixkit-sfx-2408",
+      "kind": "sfx",
+      "path": "audio/sfx/mixkit/storm-coming-whoosh-mixkit-2408.wav",
+      "title": "Storm coming whoosh",
+      "author": "Mixkit (Envato) sound library",
+      "source_page": "https://mixkit.co/free-sound-effects/whoosh/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2408/2408.wav",
+      "licence": {
+        "name": "Mixkit Sound Effects Free License",
+        "url": "https://mixkit.co/license/#sfxFree"
+      },
+      "sha256": "959884d6110640790f6e36c3204ca3c96960399a815d4188d405686dfd3d46e9",
+      "bytes": 1091552,
+      "duration_s": 4.125,
+      "codec": "pcm_s24le",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S8: the export cards fan out",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "mixkit-sfx-2903",
+      "kind": "sfx",
+      "path": "audio/sfx/mixkit/movie-whoosh-impact-presentation-mixkit-2903.wav",
+      "title": "Movie whoosh impact presentation",
+      "author": "Mixkit (Envato) sound library",
+      "source_page": "https://mixkit.co/free-sound-effects/whoosh/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/2903/2903.wav",
+      "licence": {
+        "name": "Mixkit Sound Effects Free License",
+        "url": "https://mixkit.co/license/#sfxFree"
+      },
+      "sha256": "bd2cb5c4a364a253fe2912ac03c5eee336af225e82ed471a4081ca634c06974e",
+      "bytes": 626336,
+      "duration_s": 3.527,
+      "codec": "pcm_s16le",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S11: end card",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "mixkit-sfx-1528",
+      "kind": "sfx",
+      "path": "audio/sfx/mixkit/magical-stone-slide-mixkit-1528.wav",
+      "title": "Magical stone slide",
+      "author": "Mixkit (Envato) sound library",
+      "source_page": "https://mixkit.co/free-sound-effects/slide/",
+      "download_url": "https://assets.mixkit.co/active_storage/sfx/1528/1528.wav",
+      "licence": {
+        "name": "Mixkit Sound Effects Free License",
+        "url": "https://mixkit.co/license/#sfxFree"
+      },
+      "sha256": "7a8d00d322fc698332d67b34ad8780a0f582a1ffd061414a9e597b7ce5935f03",
+      "bytes": 801848,
+      "duration_s": 4.545,
+      "codec": "pcm_s16le",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S7: walls rise in the furnished-flat replay",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "kenney-impact-impactWood_light_001",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/impactwood-light-001-kenney-impact-sounds.ogg",
+      "title": "impactWood_light_001 (Impact Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_impactsounds/Audio/impactWood_light_001.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "4b76bf3ccc8e60d19188f3165b778a7817786faa6887c55d9049bcbeef3b425f",
+      "bytes": 6373,
+      "duration_s": 0.266,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S6: furniture lands",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "kenney-impact-impactWood_light_003",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/impactwood-light-003-kenney-impact-sounds.ogg",
+      "title": "impactWood_light_003 (Impact Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_impactsounds/Audio/impactWood_light_003.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "cdfbe8af2fe7ff9ee28f337a0a989deee0f327620da456c8413644880e9d0004",
+      "bytes": 6381,
+      "duration_s": 0.266,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S6: furniture lands (variation)",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "kenney-impact-impactSoft_medium_001",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/impactsoft-medium-001-kenney-impact-sounds.ogg",
+      "title": "impactSoft_medium_001 (Impact Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_impactsounds/Audio/impactSoft_medium_001.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf",
+      "bytes": 5506,
+      "duration_s": 0.183,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S6: furniture lands (cushioned)",
+      "approved": "owner-approved in archlang-cinematic/audio/manifest.json"
+    },
+    {
+      "id": "kenney-interface-click_001",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/click-001-kenney-interface-sounds.ogg",
+      "title": "click_001 (Interface Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/interface-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_interfacesounds/Audio/click_001.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "bytes": 4876,
+      "duration_s": 0.1,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "role": "S2, S5: a statement or a finding is selected",
+      "approved": "new in this film: CC0, same mirror and pack family as the approved Kenney Impact Sounds; owner to confirm"
+    },
+    {
+      "id": "kenney-interface-select_001",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/select-001-kenney-interface-sounds.ogg",
+      "title": "select_001 (Interface Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/interface-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_interfacesounds/Audio/select_001.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "aec0c31ea934a35936ae0d2ab8fac8123c93aa5647f935853a58dbaf90278b7a",
+      "bytes": 5468,
+      "duration_s": 0.043,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "role": "S1: rings appear; S3: the room card opens",
+      "approved": "new in this film: CC0, same mirror and pack family as the approved Kenney Impact Sounds; owner to confirm"
+    },
+    {
+      "id": "kenney-interface-confirmation_001",
+      "kind": "sfx",
+      "path": "audio/sfx/kenney/confirmation-001-kenney-interface-sounds.ogg",
+      "title": "confirmation_001 (Interface Sounds pack)",
+      "author": "Kenney (www.kenney.nl)",
+      "source_page": "https://kenney.nl/assets/interface-sounds",
+      "download_url": "https://cc0-sounds.exi.software/sounds/kenney_interfacesounds/Audio/confirmation_001.ogg",
+      "licence": {
+        "name": "CC0 1.0 Universal (public domain dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+      "bytes": 8968,
+      "duration_s": 0.29,
+      "codec": "vorbis",
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "role": "S5: 0 findings",
+      "approved": "new in this film: CC0, same mirror and pack family as the approved Kenney Impact Sounds; owner to confirm"
+    }
+  ]
+}

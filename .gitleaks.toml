@@ -1,0 +1,10 @@
+# data/bake-manifest.json maps each baked file to its SHA-256; names like "accessible.svg" trip the
+# generic-api-key rule. The values are 64-hex file hashes, not secrets.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "SHA-256 file hashes in the bake manifest"
+paths = ['''data/bake-manifest\.json''']
+regexes = ['''^[0-9a-f]{64}$''']
+regexTarget = "secret"

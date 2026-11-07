@@ -1,0 +1,67 @@
+{
+  "_note": "Written by scripts/bake.mjs. Never hand-edit; re-run `npm run bake`.",
+  "pins": {
+    "core": "1.57.0",
+    "archlang3d": "0.4.0"
+  },
+  "knob": {
+    "lines": 45,
+    "rooms": 4,
+    "net_m2": 54,
+    "brief_m2": 55,
+    "net_m2_spoken": "54 square metres",
+    "brief_m2_spoken": "55 square metres",
+    "facts_line": "45 lines of ArchLang → 4 rooms · 54 m² (net)"
+  },
+  "broken": {
+    "reach_code": "W_ROOM_DISCONNECTED",
+    "second_code": "W_FURNITURE_OVER_WINDOW",
+    "findings_before": 2,
+    "findings_after": 0
+  },
+  "sweep": {
+    "let": "LIVING",
+    "from_mm": 4500,
+    "to_mm": 5850,
+    "steps": 28,
+    "net_from_m2": 54,
+    "net_to_m2": 63.73,
+    "changed": 21,
+    "held": 3,
+    "broke": 0,
+    "end_findings": 0
+  },
+  "finish": {
+    "furniture_added": 10,
+    "sheet_added": [
+      "paper",
+      "scale",
+      "dims",
+      "schedule",
+      "legend",
+      "title"
+    ]
+  },
+  "exports": {
+    "formats": [
+      "SVG",
+      "DXF",
+      "PDF",
+      "PNG",
+      "GLB"
+    ],
+    "dxf_blocks": 18,
+    "dxf_dimensions": 30
+  },
+  "gallery": {
+    "count": 37,
+    "examples_shipped": 37
+  },
+  "two_storey": {
+    "storeys": 2
+  },
+  "agent": {
+    "finding": "W_BEDROOM_NO_WINDOW",
+    "steps": 7
+  }
+}

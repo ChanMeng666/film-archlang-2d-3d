@@ -1,0 +1,11 @@
+node_modules/
+out/
+public/baked/
+public/captures/
+audio/music/
+audio/sfx/
+.remotion/
+*.log
+public/audio/
+.env
+audio/vo/

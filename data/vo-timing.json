@@ -1,0 +1,374 @@
+{
+  "_note": "Written by scripts/vo.mjs from ElevenLabs character timestamps. Never hand-edit.",
+  "scenes": {
+    "S0": {
+      "file": "audio/vo/S0-12cfc9878f3d.mp3",
+      "duration": 8.48,
+      "chars": 100,
+      "hash": "12cfc9878f3d3c87",
+      "sentences": [
+        {
+          "key": "s0_1",
+          "start": 0,
+          "end": 1.44
+        },
+        {
+          "key": "s0_2",
+          "start": 1.68,
+          "end": 5.12
+        },
+        {
+          "key": "s0_3",
+          "start": 5.44,
+          "end": 8.48
+        }
+      ]
+    },
+    "S1": {
+      "file": "audio/vo/S1-07e093105f6a.mp3",
+      "duration": 16,
+      "chars": 188,
+      "hash": "07e093105f6a8336",
+      "sentences": [
+        {
+          "key": "s1_1",
+          "start": 0,
+          "end": 3.92
+        },
+        {
+          "key": "s1_2",
+          "start": 4.08,
+          "end": 9.96
+        },
+        {
+          "key": "s1_3",
+          "start": 10,
+          "end": 13.56
+        },
+        {
+          "key": "s1_4",
+          "start": 13.6,
+          "end": 16.08
+        }
+      ]
+    },
+    "S2": {
+      "file": "audio/vo/S2-f4937834b3c6.mp3",
+      "duration": 17.52,
+      "chars": 196,
+      "hash": "f4937834b3c6dbf4",
+      "sentences": [
+        {
+          "key": "s2_1",
+          "start": 0,
+          "end": 3.92
+        },
+        {
+          "key": "s2_2",
+          "start": 4,
+          "end": 11.227
+        },
+        {
+          "key": "s2_3",
+          "start": 11.253,
+          "end": 14.68
+        },
+        {
+          "key": "s2_4",
+          "start": 14.72,
+          "end": 17.6
+        }
+      ]
+    },
+    "S3": {
+      "file": "audio/vo/S3-df220f0223b7.mp3",
+      "duration": 14.48,
+      "chars": 161,
+      "hash": "df220f0223b76294",
+      "sentences": [
+        {
+          "key": "s3_1",
+          "start": 0,
+          "end": 3.12
+        },
+        {
+          "key": "s3_2",
+          "start": 3.44,
+          "end": 9.08
+        },
+        {
+          "key": "s3_3",
+          "start": 9.44,
+          "end": 14.48
+        }
+      ]
+    },
+    "S4": {
+      "file": "audio/vo/S4-b32551b6c067.mp3",
+      "duration": 16.24,
+      "chars": 180,
+      "hash": "b32551b6c067db35",
+      "sentences": [
+        {
+          "key": "s4_1",
+          "start": 0,
+          "end": 9.12
+        },
+        {
+          "key": "s4_2",
+          "start": 9.2,
+          "end": 16.32
+        }
+      ]
+    },
+    "S5": {
+      "file": "audio/vo/S5-ec834252f5b9.mp3",
+      "duration": 16.72,
+      "chars": 196,
+      "hash": "ec834252f5b9ead4",
+      "sentences": [
+        {
+          "key": "s5_1",
+          "start": 0,
+          "end": 6.56
+        },
+        {
+          "key": "s5_2",
+          "start": 6.72,
+          "end": 11.32
+        },
+        {
+          "key": "s5_3",
+          "start": 11.36,
+          "end": 16.8
+        }
+      ]
+    },
+    "S6": {
+      "file": "audio/vo/S6-80d70a1a1ac4.mp3",
+      "duration": 10.48,
+      "chars": 120,
+      "hash": "80d70a1a1ac41066",
+      "sentences": [
+        {
+          "key": "s6_1",
+          "start": 0,
+          "end": 8.76
+        },
+        {
+          "key": "s6_2",
+          "start": 8.8,
+          "end": 10.56
+        }
+      ]
+    },
+    "S7": {
+      "file": "audio/vo/S7-c2949676a367.mp3",
+      "duration": 25.68,
+      "chars": 298,
+      "hash": "c2949676a3671631",
+      "sentences": [
+        {
+          "key": "s7_1",
+          "start": 0,
+          "end": 3.16
+        },
+        {
+          "key": "s7_2",
+          "start": 3.2,
+          "end": 10.68
+        },
+        {
+          "key": "s7_3",
+          "start": 10.72,
+          "end": 16.28
+        },
+        {
+          "key": "s7_4",
+          "start": 16.32,
+          "end": 19.467
+        },
+        {
+          "key": "s7_5",
+          "start": 19.493,
+          "end": 25.76
+        }
+      ]
+    },
+    "S8": {
+      "file": "audio/vo/S8-dcd0d9b8da59.mp3",
+      "duration": 12.56,
+      "chars": 106,
+      "hash": "dcd0d9b8da593a04",
+      "sentences": [
+        {
+          "key": "s8_1",
+          "start": 0,
+          "end": 8.8
+        },
+        {
+          "key": "s8_2",
+          "start": 8.88,
+          "end": 12.56
+        }
+      ]
+    },
+    "S9": {
+      "file": "audio/vo/S9-3bec60a71f66.mp3",
+      "duration": 12.16,
+      "chars": 159,
+      "hash": "3bec60a71f66c88f",
+      "sentences": [
+        {
+          "key": "s9_1",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "key": "s9_2",
+          "start": 3.04,
+          "end": 9.2
+        },
+        {
+          "key": "s9_3",
+          "start": 9.28,
+          "end": 12.24
+        }
+      ]
+    },
+    "S10": {
+      "file": "audio/vo/S10-1f2b372a5a7b.mp3",
+      "duration": 8.64,
+      "chars": 81,
+      "hash": "1f2b372a5a7b273a",
+      "sentences": [
+        {
+          "key": "s10_1",
+          "start": 0,
+          "end": 3.28
+        },
+        {
+          "key": "s10_2",
+          "start": 3.48,
+          "end": 8.64
+        }
+      ]
+    },
+    "S11": {
+      "file": "audio/vo/S11-a86a0ca59de1.mp3",
+      "duration": 13.36,
+      "chars": 156,
+      "hash": "a86a0ca59de1684d",
+      "sentences": [
+        {
+          "key": "s11_1",
+          "start": 0,
+          "end": 5.92
+        },
+        {
+          "key": "s11_2",
+          "start": 6.04,
+          "end": 11.44
+        },
+        {
+          "key": "s11_3",
+          "start": 11.72,
+          "end": 13.44
+        }
+      ]
+    }
+  },
+  "brief": {
+    "file": "audio/vo/brief-76ba5e73e320.mp3",
+    "duration": 7.44,
+    "chars": 95,
+    "hash": "76ba5e73e3207f47",
+    "words": [
+      {
+        "word": "Draw",
+        "start": 0,
+        "end": 0.32
+      },
+      {
+        "word": "me",
+        "start": 0.4,
+        "end": 0.48
+      },
+      {
+        "word": "a",
+        "start": 0.56,
+        "end": 0.64
+      },
+      {
+        "word": "one-bed",
+        "start": 0.72,
+        "end": 1.12
+      },
+      {
+        "word": "flat,",
+        "start": 1.2,
+        "end": 1.84
+      },
+      {
+        "word": "living",
+        "start": 1.92,
+        "end": 2.16
+      },
+      {
+        "word": "room",
+        "start": 2.24,
+        "end": 2.56
+      },
+      {
+        "word": "and",
+        "start": 2.64,
+        "end": 2.8
+      },
+      {
+        "word": "kitchen",
+        "start": 2.96,
+        "end": 3.28
+      },
+      {
+        "word": "together,",
+        "start": 3.36,
+        "end": 4.16
+      },
+      {
+        "word": "about",
+        "start": 4.24,
+        "end": 4.56
+      },
+      {
+        "word": "55",
+        "start": 4.72,
+        "end": 5.28
+      },
+      {
+        "word": "square",
+        "start": 5.44,
+        "end": 5.68
+      },
+      {
+        "word": "metres,",
+        "start": 5.76,
+        "end": 6.56
+      },
+      {
+        "word": "and",
+        "start": 6.64,
+        "end": 6.72
+      },
+      {
+        "word": "check",
+        "start": 6.8,
+        "end": 7.04
+      },
+      {
+        "word": "it.",
+        "start": 7.16,
+        "end": 7.52
+      }
+    ]
+  }
+}

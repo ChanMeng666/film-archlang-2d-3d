@@ -1,0 +1,45 @@
+{
+  "name": "film-archlang-2d-3d",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Feature explainer film for ArchLang: one .arch file becomes a dimensioned 2D plan and a 3D preview.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "bake": "node scripts/bake.mjs",
+    "capture": "node scripts/heavy-guard.mjs && node scripts/capture.mjs",
+    "audio": "node audio/fetch.mjs",
+    "gates": "node scripts/gate-copy.mjs && node scripts/gate-facts.mjs && node scripts/gate-logo.mjs",
+    "gate:copy": "node scripts/gate-copy.mjs",
+    "gate:facts": "node scripts/gate-facts.mjs",
+    "gate:logo": "node scripts/gate-logo.mjs",
+    "studio": "remotion studio src/index.ts",
+    "preview": "node scripts/preview.mjs MasterEN out/preview-en.mp4",
+    "review-stills": "node scripts/heavy-guard.mjs && node scripts/review-stills.mjs",
+    "loudness": "node scripts/loudness.mjs",
+    "master": "node scripts/master.mjs",
+    "render:en": "node scripts/heavy-guard.mjs && remotion render src/index.ts MasterEN out/archlang-2d-3d-en-16x9.mp4 --concurrency=1 --offthreadvideo-cache-size-in-bytes=500000000 --offthreadvideo-video-threads=1 --media-cache-size-in-bytes=300000000 && node scripts/master.mjs out/archlang-2d-3d-en-16x9.mp4",
+    "render:cut30": "node scripts/heavy-guard.mjs && remotion render src/index.ts Cut30 out/cut-30s-en-16x9.mp4 --concurrency=1 --offthreadvideo-cache-size-in-bytes=500000000 --offthreadvideo-video-threads=1 --media-cache-size-in-bytes=300000000 && node scripts/master.mjs out/cut-30s-en-16x9.mp4",
+    "render:cut30v": "node scripts/heavy-guard.mjs && remotion render src/index.ts Cut30Vertical out/cut-30s-en-9x16.mp4 --concurrency=1 --offthreadvideo-cache-size-in-bytes=500000000 --offthreadvideo-video-threads=1 --media-cache-size-in-bytes=300000000 && node scripts/master.mjs out/cut-30s-en-9x16.mp4",
+    "srt": "node scripts/srt.mjs",
+    "poster": "remotion still src/index.ts Poster out/poster-16x9.png --frame=0 && remotion still src/index.ts Poster out/thumb-1280x720.png --frame=0 --scale=0.6667",
+    "typecheck": "tsc --noEmit",
+    "vo": "node scripts/vo.mjs"
+  },
+  "dependencies": {
+    "@chanmeng666/archlang": "1.57.0",
+    "@chanmeng666/archlang-3d": "0.4.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/noto-sans-symbols-2": "5.2.8",
+    "@remotion/cli": "4.0.538",
+    "@remotion/media": "4.0.538",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "remotion": "4.0.538"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
